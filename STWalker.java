@@ -181,7 +181,8 @@ public class STWalker {
                         return handlePostInteraction();
                     }
                 } else {
-                    if (obstacle.interact("Open")) {                                                        //Going through.
+                    // Opening the Al-Kharid gate is done by paying the fee
+                    if ((obstacle.tile().x() == 3268 && obstacle.interact("Pay")) || obstacle.interact("Open")) {                                                        //Going through.
                         return handlePostInteraction();
                     }
                 }
